@@ -1,5 +1,5 @@
-void RaInit(int A[ROWS][COLS]){
-    int row,col;
+static int row,col;
+void raInit(int A[ROWS][COLS]){
     int axis = 1 ; 
     int value = 0 ;
     for(row=0; row<ROWS; row++){
@@ -13,8 +13,7 @@ void RaInit(int A[ROWS][COLS]){
         axis++ ;
     }
 }
-void RbInit(int A[ROWS][COLS]){
-    int row,col;
+void rbInit(int A[ROWS][COLS]){
     int axis = 8 ; 
     int value = 0 ;
     for(row=0; row<ROWS; row++){
@@ -29,8 +28,7 @@ void RbInit(int A[ROWS][COLS]){
     }
 }
 
-void RcInit(int A[ROWS][COLS]){
-    int row,col;
+void rcInit(int A[ROWS][COLS]){
     for(row=0; row<ROWS; row++){
         for(col=0; col<COLS; col++){
             A[row][col] = 0 ;
@@ -38,8 +36,8 @@ void RcInit(int A[ROWS][COLS]){
     }
 }
 
-void DotProduct(int A[ROWS][COLS] , int B[ROWS][COLS], int C[ROWS][COLS]){
-    int row,col,step;
+void dotProduct(int A[ROWS][COLS] , int B[ROWS][COLS], int C[ROWS][COLS]){
+    int step;
     for (row = 0; row < ROWS; row++){
         for (col = 0; col < COLS; col++){
             for(step = 0; step < ROWS; step++){
@@ -49,7 +47,7 @@ void DotProduct(int A[ROWS][COLS] , int B[ROWS][COLS], int C[ROWS][COLS]){
     }
 }
 
-void ShowMatrix(int X[ROWS][COLS]){
+void showMatrix(int X[ROWS][COLS]){
     for(row=0; row<ROWS; row++){
         for(col=0; col<COLS; col++){
             printf("%d ",X[row][col]);
@@ -57,3 +55,4 @@ void ShowMatrix(int X[ROWS][COLS]){
     printf("\n");
     }
 }
+

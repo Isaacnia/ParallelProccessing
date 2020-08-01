@@ -1,16 +1,32 @@
 #define ROWS 8
 #define COLS 8
 #include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <math.h>
 #include "tools.h"
-int main(){
+#include "section.h"
+int main(int argc, char *argv[]){
     int A[ROWS][COLS];
     int B[ROWS][COLS];
     int C[ROWS][COLS];
     int row,col;
-    RbInit(B);
-    RaInit(A);
-    RcInit(C);
-    DotProduct(A,B,C);
+    rbInit(B);
+    raInit(A);
+    rcInit(C);
+
+    if(strcmp(argv[1],"1") == 0){
+        one(A,B,C);
+    }
+    else if(strcmp(argv[1],"2") == 0){
+        tow(A,B,C);
+    }
+    else if(strcmp(argv[1],"3") == 0){
+        three(A,B,C);
+    }
+    else{
+        printf("\nNothing");
+    }
 
 return 0;
 }
