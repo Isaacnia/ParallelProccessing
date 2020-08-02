@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <omp.h>
 #include <math.h>
 #include "tools.h"
 #include "section.h"
@@ -15,18 +16,30 @@ int main(int argc, char *argv[]){
     raInit(A);
     rcInit(C);
 
-    if(strcmp(argv[1],"1") == 0){
-        one(A,B,C);
+    if(argc > 1 ){
+        if(strcmp(argv[1],"1") == 0){
+            one(A,B,C);
+        }
+        else if(strcmp(argv[1],"2") == 0){
+            tow(A,B,C);
+        }
+        else if(strcmp(argv[1],"3") == 0){
+            three(A,B,C);
+        }
+        else if(strcmp(argv[1],"4") == 0){
+        four(A,B,C);
+        }
+        else if(strcmp(argv[1],"5") == 0){
+        five(A,B,C);
+        }
+        else{
+            printf("\nNothing\n");
+        }
+    }else{
+        printf("\n Please enter your section \n");
     }
-    else if(strcmp(argv[1],"2") == 0){
-        tow(A,B,C);
-    }
-    else if(strcmp(argv[1],"3") == 0){
-        three(A,B,C);
-    }
-    else{
-        printf("\nNothing");
-    }
+
+
 
 return 0;
 }

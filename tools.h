@@ -56,3 +56,10 @@ void showMatrix(int X[ROWS][COLS]){
     }
 }
 
+void microProcess(int A[ROWS][COLS], int B[ROWS][COLS], int C[ROWS][COLS], int row , int col){
+    int pivote;
+   // printf("Thread number is : %d \n",omp_get_thread_num());
+    for(pivote = 0 ; pivote < ROWS ; pivote++){
+        C[row][col] += A[row][pivote] * B[pivote][col];
+    }
+}
