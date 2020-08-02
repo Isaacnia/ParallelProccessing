@@ -32,6 +32,9 @@ int main(int argc, char *argv[]){
         else if(strcmp(argv[1],"5") == 0){
         five(A,B,C);
         }
+        else if(strcmp(argv[1],"6") == 0){
+        six(A,B,C);
+        }
         else{
             printf("\nNothing\n");
         }
